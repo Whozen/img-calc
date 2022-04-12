@@ -1,23 +1,24 @@
 <template>
-  <div class="container">
-    <div class="title">
-      <h1>Calculate Image Numbers</h1>
-    </div>
-    <UploadForm />
-  </div>
+  <Header />
+  <HomePage />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import UploadForm from './components/UploadForm.vue';
+import Header from './components/Header.vue';
+import HomePage from './views/HomePage.vue';
 
 @Options({
   components: {
-    UploadForm,
+    Header,
+    HomePage,
   },
 })
 export default class App extends Vue {}
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/css/global.scss';
+@import '@/assets/css/helper/variable.scss';
+
 </style>

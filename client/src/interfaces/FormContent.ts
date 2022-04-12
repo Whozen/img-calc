@@ -1,7 +1,7 @@
-interface FormData {
+interface FormContent {
     id: string;
     imageTitle: string;
     image: string;
 }
 
-export { FormData };
+export { FormContent };
