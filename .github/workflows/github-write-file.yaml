@@ -1,0 +1,25 @@
+on: 
+  workflow_dispatch:
+    inputs:
+      path:
+        description: 'Path of file to write on'     
+        required: true
+        default: 'test.txt'
+      content:
+        description: 'Content to write on file'     
+        required: true
+        default: 'Hello World'
+jobs:
+  github-write-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update File with Content
+        id: fileWrite
+        uses: whozen/github-write-file@v1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path:  ${{ github.event.inputs.path }}"
+          content:  ${{ github.event.inputs.content }}"
+      - name: Get the output content
+        run: echo "The time was ${{ steps.fileWrite.outputs.content }}"
