@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Update File with Content
         id: fileWrite
-        uses: whozen/github-write-file@v1.0
+        uses: whozen/github-write-file@v1.0.0-alpha
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
