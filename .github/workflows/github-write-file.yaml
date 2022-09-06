@@ -19,7 +19,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path:  ${{ github.event.inputs.path }}"
-          content:  ${{ github.event.inputs.content }}"
+          path:  ${{ github.event.inputs.path }}
+          content:  ${{ github.event.inputs.content }}
       - name: Get the output content
         run: echo "The time was ${{ steps.fileWrite.outputs.content }}"
