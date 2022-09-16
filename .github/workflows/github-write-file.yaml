@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: Update File with Content
         id: fileWrite
-        uses: whozen/github-write-file@v1.1.0-alpha
+        uses: whozen/github-write-file
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -38,4 +38,4 @@ jobs:
           content:  ${{ github.event.inputs.content }}
           overwrite: ${{ github.event.inputs.overwrite }}
       - name: Get the output content
-        run: echo "The time was ${{ steps.fileWrite.outputs.content }}"
+        run: echo "The written content is ${{ steps.fileWrite.outputs.content }}"
