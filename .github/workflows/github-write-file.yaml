@@ -27,6 +27,10 @@ jobs:
   github-write-file:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+          with:
+            fetch-depth: 0
+            ref: main
       - name: Update File with Content
         id: fileWrite
         uses: whozen/github-write-file@v1.1.1-alpha
