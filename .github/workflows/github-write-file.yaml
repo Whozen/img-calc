@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Update File with Content
         id: fileWrite
-        uses: whozen/github-write-file@v1.1.1-alpha
+        uses: whozen/github-write-file@v1.1.0-alpha
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
